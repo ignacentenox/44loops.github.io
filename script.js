@@ -25,16 +25,15 @@ function onPlayerReady(event) {
     // Inicia el video automáticamente al abrir la página
     event.target.playVideo();
 
-
-        // pantalla completa navegadores
-        const playerElement = document.getElementById('youtube-player');
-        if (playerElement.requestFullscreen) {
-            playerElement.requestFullscreen();
-        } else if (playerElement.mozRequestFullScreen) { // Firefox
-            playerElement.mozRequestFullScreen();
-        } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            playerElement.webkitRequestFullscreen();
-        }
+    // Intenta poner el video en pantalla completa
+    const playerElement = document.getElementById('youtube-player');
+    if (playerElement.requestFullscreen) {
+        playerElement.requestFullscreen();
+    } else if (playerElement.mozRequestFullScreen) { // Firefox
+        playerElement.mozRequestFullScreen();
+    } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        playerElement.webkitRequestFullscreen();
+    }
 }
 
 function onPlayerStateChange(event) {
