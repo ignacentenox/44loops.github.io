@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
             'controls': 0,
             'loop': 1,
             'modestbranding': 1,
-            'mute': 1,
+            'mute': 0,
             'iv_load_policy': 3
         },
         events: {
