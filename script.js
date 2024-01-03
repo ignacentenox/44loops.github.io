@@ -22,9 +22,11 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+    // Inicia el video automáticamente al abrir la página
+    event.target.playVideo();
+
     // Espera 10 segundos y luego activa el modo de pantalla completa
     setTimeout(() => {
-        event.target.playVideo();
         event.target.setVolume(100);
         event.target.unMute(); // Activa el sonido
         event.target.playVideo();
