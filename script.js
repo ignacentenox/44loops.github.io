@@ -30,7 +30,18 @@ function onPlayerReady(event) {
         event.target.setVolume(100);
         event.target.unMute(); // Activa el sonido
         event.target.playVideo();
-        event.target.webkitEnterFullscreen();
+
+        // Intenta poner el video en pantalla completa
+        var iframe = document.getElementById('youtube-player');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+        }
     }, 10000); // 10 segundos en milisegundos
 }
 
