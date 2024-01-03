@@ -25,10 +25,6 @@ function onPlayerReady(event) {
     // Inicia el video automáticamente al abrir la página
     event.target.playVideo();
 
-    //10 segundos y pantalla completa
-    setTimeout(() => {
-        event.target.setVolume(100);
-        event.target.unMute(); // Activa el sonido
 
         // pantalla completa navegadores
         const playerElement = document.getElementById('youtube-player');
@@ -39,7 +35,6 @@ function onPlayerReady(event) {
         } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
             playerElement.webkitRequestFullscreen();
         }
-    }, 10000); // 10 segundos en milisegundos
 }
 
 function onPlayerStateChange(event) {
