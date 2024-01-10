@@ -3,15 +3,15 @@ var player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('youtube-player', {
-        height: '50%',
-        width: '50%',
+        height: '100%',
+        width: '100%',
         videoId: 'VW9c1EtThbM',
         playerVars: {
             'autoplay': 1,
             'controls': 0,
             'loop': 1,
             'modestbranding': 1,
-            'mute': 0,
+            'mute': 1,
             'iv_load_policy': 3
         },
         events: {
@@ -28,13 +28,16 @@ function onPlayerStateChange(event) {
     }
 
     if (event.data === YT.PlayerState.PLAYING) {
+        // Después de iniciar la reproducción, activa el sonido
+        player.unMute();
+
         // Intenta poner el video en pantalla completa
         const playerElement = document.getElementById('youtube-player');
         if (playerElement.requestFullscreen) {
             playerElement.requestFullscreen();
         } else if (playerElement.mozRequestFullScreen) { // Firefox
             playerElement.mozRequestFullScreen();
-        } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari y Opera
             playerElement.webkitRequestFullscreen();
         }
     }
