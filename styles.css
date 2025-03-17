@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    background-color: #268902;
+    background-color: #0061a5;
     color: #ffffff;
     border-radius: 0;
     display: flex;
@@ -42,7 +42,7 @@ nav a {
         /* Limita la altura para mantener la proporción */
         overflow: hidden;
         border-radius: 10px;
-        border: 2px solid green;
+        border: 2px solid #002480;
         animation: border-color 1s infinite;
     }
     
