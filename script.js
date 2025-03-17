@@ -17,6 +17,7 @@ function onYouTubeIframeAPIReady() {
                 'list': 'PLUYzBUz0Pt6e_A94BFsCqn3PAu3-sRH2O' // ID de la playlist
             },
             events: {
+                'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             }
         });
@@ -25,7 +26,12 @@ function onYouTubeIframeAPIReady() {
     }
 }
 
+function onPlayerReady(event) {
+    console.log('Reproductor de YouTube listo');
+}
+
 function onPlayerStateChange(event) {
+    console.log('Cambio de estado del reproductor:', event.data);
     if (event.data === YT.PlayerState.ENDED) {
         player.seekTo(0);
         player.playVideo();
