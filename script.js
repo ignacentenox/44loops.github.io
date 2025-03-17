@@ -1,7 +1,7 @@
-// JavaScript (script.js)
 var player;
 
 function onYouTubeIframeAPIReady() {
+    console.log('API de YouTube lista');
     try {
         player = new YT.Player('youtube-player', {
             height: '100%',
